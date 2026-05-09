@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Day 01 실습</title>
+  </head>
+  <body>
+
+    <!--
+      [실행 흐름 Step 1] index.html — SPA의 껍데기
+
+      Thymeleaf: 서버가 templates/*.html 을 완성해서 브라우저로 전송
+      React    : index.html 는 빈 그릇. JS가 채운다.
+
+      <div id="root"> → 비어 있는 그릇
+      React가 이 안에 화면 전체를 그려 넣는다.
+    -->
+    <div id="root"></div>
+
+    <!--
+      main.jsx 를 불러와 React 앱을 실행한다.
+      type="module" → ES Module 방식 (import/export 사용 가능)
+    -->
+    <script type="module" src="/src/main.jsx"></script>
+
+  </body>
+</html>
