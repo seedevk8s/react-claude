@@ -1,0 +1,27 @@
+/* ✅ Thymeleaf: static/css/style.css → Spring Boot가 정적 파일로 서빙
+   ✅ React:     src/index.css     → Vite가 번들링해서 제공 */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
