@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  /* 레이아웃 */
+  .page          { @apply min-h-screen bg-gray-50 flex flex-col; }
+  .main          { @apply flex-1 max-w-5xl w-full mx-auto px-6 py-10; }
+
+  /* 헤더 */
+  .header        { @apply bg-slate-800 text-white px-8 py-5 flex items-center justify-between; }
+  .header-title  { @apply text-2xl font-bold; }
+  .header-sub    { @apply text-slate-300 text-sm mt-1; }
+  .header-info   { @apply text-slate-300 text-sm text-right; }
+
+  /* 섹션 */
+  .section-title { @apply text-lg font-semibold text-slate-600 mb-4; }
+  .section       { @apply mb-10; }
+
+  /* 회원 카드 (섹션 1) */
+  .member-grid   { @apply grid grid-cols-1 sm:grid-cols-3 gap-4; }
+  .member-card   { @apply bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-center gap-4; }
+  .member-avatar { @apply w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl font-bold text-slate-600 flex-shrink-0; }
+  .member-name   { @apply font-bold text-gray-800; }
+  .member-email  { @apply text-sm text-gray-400; }
+  .badge-admin   { @apply inline-block mt-1 px-2 py-0.5 text-xs rounded-full bg-purple-100 text-purple-700 font-semibold; }
+  .badge-user    { @apply inline-block mt-1 px-2 py-0.5 text-xs rounded-full bg-blue-100 text-blue-700 font-semibold; }
+
+  /* 도서 테이블 (섹션 2) */
+  .book-table    { @apply w-full bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden; }
+  .book-table th { @apply bg-slate-700 text-white text-left px-5 py-3 text-sm font-semibold; }
+  .book-table td { @apply px-5 py-3 text-sm border-b border-gray-100; }
+  .book-table tr:last-child td { @apply border-b-0; }
+  .book-table tr:hover td { @apply bg-gray-50; }
+  .badge-new     { @apply px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-semibold; }
+  .badge-sale    { @apply px-2 py-0.5 text-xs rounded-full bg-red-100 text-red-700 font-semibold; }
+  .stock-ok      { @apply text-green-600 font-semibold; }
+  .stock-out     { @apply text-red-400; }
+
+  /* 주문 목록 (섹션 3 - 빈 배열 처리) */
+  .order-list    { @apply flex flex-col gap-3; }
+  .order-item    { @apply bg-white rounded-xl border border-gray-200 shadow-sm px-5 py-4 flex items-center justify-between; }
+  .order-title   { @apply font-semibold text-gray-800; }
+  .order-date    { @apply text-sm text-gray-400 mt-0.5; }
+  .order-price   { @apply font-bold text-blue-600; }
+  .empty-box     { @apply bg-white rounded-xl border border-gray-200 py-16 text-center text-gray-400; }
+
+  /* 버튼 */
+  .btn-buy       { @apply px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors; }
+  .btn-soldout   { @apply px-4 py-1.5 bg-gray-100 text-gray-400 text-sm rounded-lg cursor-not-allowed; }
+
+  /* 푸터 */
+  .footer        { @apply text-center py-5 text-sm text-gray-400 border-t border-gray-200; }
+}
