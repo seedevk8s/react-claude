@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wrapper        { @apply min-h-screen bg-gray-50 flex flex-col; }
+  .container      { @apply flex-1 max-w-5xl w-full mx-auto px-6 py-8; }
+
+  /* 헤더 */
+  .header         { @apply bg-slate-800 text-white px-8 py-4 flex items-center justify-between; }
+  .header-logo    { @apply text-xl font-bold hover:text-blue-300 transition-colors; }
+  .header-nav     { @apply flex gap-6 items-center; }
+  .header-nav a   { @apply text-slate-300 hover:text-white text-sm transition-colors; }
+  .cart-btn       { @apply relative flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm px-4 py-2 rounded-lg transition-colors; }
+  .cart-badge     { @apply absolute -top-2 -right-2 bg-yellow-400 text-slate-900 text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold; }
+
+  /* 푸터 */
+  .footer         { @apply text-center py-5 text-sm text-gray-400 border-t border-gray-200 bg-white; }
+
+  /* 로딩 / 에러 */
+  .loading-wrap   { @apply flex flex-col items-center justify-center py-24 gap-4; }
+  .loading-spin   { @apply w-12 h-12 border-4 border-rose-200 border-t-rose-600 rounded-full animate-spin; }
+  .loading-text   { @apply text-gray-500 text-sm; }
+  .error-wrap     { @apply flex flex-col items-center justify-center py-20 gap-3; }
+  .btn-retry      { @apply px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm rounded-lg transition-colors; }
+
+  /* 툴바 */
+  .toolbar        { @apply flex flex-col sm:flex-row gap-3 mb-6 p-4 bg-white rounded-xl border border-gray-200 shadow-sm; }
+  .search-input   { @apply flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500; }
+  .filter-group   { @apply flex gap-2 flex-wrap; }
+  .btn-filter     { @apply px-3 py-1.5 text-sm rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors; }
+  .btn-filter-active { @apply px-3 py-1.5 text-sm rounded-lg bg-rose-600 text-white font-semibold; }
+  .sort-select    { @apply px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none; }
+  .result-summary { @apply text-sm text-gray-500 mb-4; }
+
+  /* 도서 그리드 */
+  .book-grid      { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5; }
+  .book-card      { @apply bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer; }
+  .book-badges    { @apply flex gap-1 mb-3 min-h-[24px]; }
+  .book-title     { @apply font-bold text-gray-800 mb-1 text-sm leading-snug; }
+  .book-author    { @apply text-xs text-gray-400 mb-1; }
+  .book-category  { @apply text-xs text-rose-500 mb-2; }
+  .book-price     { @apply text-rose-600 font-bold; }
+
+  /* 뱃지 */
+  .badge-new      { @apply px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700 font-semibold; }
+  .badge-sale     { @apply px-2 py-0.5 text-xs rounded-full bg-red-100 text-red-700 font-semibold; }
+  .badge-in-cart  { @apply px-2 py-0.5 text-xs rounded-full bg-rose-100 text-rose-700 font-semibold; }
+
+  /* 버튼 */
+  .btn-primary    { @apply px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-sm rounded-lg transition-colors; }
+  .btn-secondary  { @apply px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 text-sm rounded-lg border border-gray-300 transition-colors; }
+  .btn-buy        { @apply w-full py-2 mt-4 bg-rose-600 hover:bg-rose-700 text-white text-sm rounded-lg transition-colors; }
+  .btn-added      { @apply w-full py-2 mt-4 bg-green-500 text-white text-sm rounded-lg; }
+  .btn-soldout    { @apply w-full py-2 mt-4 bg-gray-100 text-gray-400 text-sm rounded-lg cursor-not-allowed; }
+  .btn-danger     { @apply px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white text-sm rounded-lg transition-colors; }
+
+  /* 도서 상세 */
+  .detail-wrap    { @apply max-w-3xl mx-auto; }
+  .detail-card    { @apply bg-white rounded-xl border border-gray-200 shadow-sm p-8; }
+  .detail-emoji   { @apply text-8xl mb-4; }
+  .detail-title   { @apply text-2xl font-bold text-gray-800 mb-2; }
+  .detail-author  { @apply text-gray-500 mb-1; }
+  .detail-price   { @apply text-3xl font-bold text-rose-600 mt-4 mb-6; }
+  .detail-badge   { @apply inline-block px-3 py-1 text-sm rounded-full font-semibold mb-4; }
+
+  /* 장바구니 페이지 */
+  .cart-item      { @apply flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0; }
+  .cart-item-title { @apply font-semibold text-gray-800; }
+  .cart-item-price { @apply text-rose-600 font-bold text-sm mt-0.5; }
+  .qty-control    { @apply flex items-center gap-2; }
+  .qty-btn        { @apply w-8 h-8 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 text-gray-600 font-bold transition-colors; }
+  .qty-num        { @apply w-8 text-center font-semibold; }
+  .cart-total     { @apply flex justify-between items-center mt-6 pt-6 border-t-2 border-gray-200; }
+
+  /* 404 */
+  .not-found      { @apply flex flex-col items-center justify-center py-24 gap-4 text-center; }
+
+  /* 빈 상태 */
+  .empty-result   { @apply col-span-full text-center py-16 text-gray-400; }
+  .empty-wrap     { @apply flex flex-col items-center justify-center py-20 gap-4 text-gray-400; }
+}
