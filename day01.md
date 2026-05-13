@@ -60,6 +60,44 @@ npm run dev
 | `npm install` | 의존성 설치 (mvn install과 동일) |
 | `npm run dev` | 개발 서버 시작 (기본 포트: 5173) |
 
+### 2-1-1. Tailwind CSS 추가 설정
+
+> 기본 프로젝트 생성 후 아래 순서대로 진행한다.
+
+**① Tailwind CSS 패키지 설치**
+```bash
+npm install -D tailwindcss @tailwindcss/vite
+```
+
+**② `vite.config.js` 수정**
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})
+```
+
+**③ `src/index.css` 상단에 추가**
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+| 단계 | 파일 | 설명 |
+|------|------|------|
+| ① | 터미널 | Tailwind + Vite 플러그인 설치 |
+| ② | `vite.config.js` | Tailwind 플러그인 등록 |
+| ③ | `src/index.css` | Tailwind 디렉티브 선언 |
+
+> 💡 **Tailwind CSS v4**부터는 `tailwind.config.js` 파일 없이 `@tailwindcss/vite` 플러그인 방식으로 사용한다.
+
 ### 2-2. 폴더 구조 해부
 
 ```
